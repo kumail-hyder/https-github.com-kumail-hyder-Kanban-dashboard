@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nebula Kanban</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com" rel="preconnect"/>
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&amp;display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#46ec13",
+                        "primary-hover": "#3bd110",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#0a110a",
+                        "surface-dark": "#162214", 
+                        "surface-dark-hover": "#1c2b19",
+                        "card-dark": "#1f2f1c",    
+                        "text-primary": "#ffffff",
+                        "text-secondary": "#9fb399",
+                        "error": "#ef4444",
+                        "error-surface": "rgba(239, 68, 68, 0.1)",
+                        "border-subtle": "rgba(255, 255, 255, 0.08)",
+                    },
+                    fontFamily: {
+                        "display": ["Manrope", "sans-serif"]
+                    },
+                    boxShadow: {
+                        'glow': '0 0 15px rgba(70,236,19,0.1)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.3), 0 2px 4px -1px rgba(0, 0, 0, 0.15)',
+                    },
+                    animation: {
+                        'shimmer': 'shimmer 2s infinite linear',
+                        'slide-in': 'slideIn 0.3s ease-out forwards',
+                    },
+                    keyframes: {
+                        shimmer: {
+                            '0%': { backgroundPosition: '-1000px 0' },
+                            '100%': { backgroundPosition: '1000px 0' },
+                        },
+                        slideIn: {
+                            'from': { transform: 'translateY(100%)', opacity: '0' },
+                            'to': { transform: 'translateY(0)', opacity: '1' },
+                        }
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .kanban-container::-webkit-scrollbar {
+            height: 12px;
+            width: 12px;
+        }
+        .kanban-container::-webkit-scrollbar-track {
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 6px;
+        }
+        .kanban-container::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 6px;
+            border: 3px solid transparent;
+            background-clip: content-box;
+        }
+        .kanban-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        .task-list::-webkit-scrollbar {
+            width: 6px;
+        }
+        .task-list::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .task-list::-webkit-scrollbar-thumb {
+            background: rgba(163, 185, 157, 0.2);
+            border-radius: 4px;
+        }
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+        *:focus-visible {
+            outline: 2px solid #46ec13;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@18.2.0",
+    "react/": "https://esm.sh/react@18.2.0/",
+    "react-dom": "https://esm.sh/react-dom@18.2.0",
+    "react-dom/": "https://esm.sh/react-dom@18.2.0/",
+    "framer-motion": "https://esm.sh/framer-motion@11.0.8?external=react,react-dom"
+  }
+}
+</script>
+</head>
+  <body class="bg-background-dark text-text-primary font-display overflow-hidden h-screen w-full">
+    <div id="root"></div>
+  </body>
+</html>
